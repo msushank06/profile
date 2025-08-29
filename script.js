@@ -1,3 +1,21 @@
+// Hire Me Modal logic
+const hireMeBtn = document.querySelector('.hire-me-btn');
+const hireMeModal = document.getElementById('hireMeModal');
+const closeModal = document.getElementById('closeModal');
+if (hireMeBtn && hireMeModal && closeModal) {
+  hireMeBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    hireMeModal.style.display = 'flex';
+  });
+  closeModal.addEventListener('click', function() {
+    hireMeModal.style.display = 'none';
+  });
+  window.addEventListener('click', function(e) {
+    if (e.target === hireMeModal) {
+      hireMeModal.style.display = 'none';
+    }
+  });
+}
 // Init AOS
 AOS.init({ duration: 1000, once: true });
 
